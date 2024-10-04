@@ -52,3 +52,10 @@ function hasRepeatingDigits(number) {
   const digits = number.split('');
   return new Set(digits).size !== digits.length;
 }
+
+// Función para mostrar/ocultar el número secreto
+function togglePassword() {
+  const passwordInput = document.getElementById('secretNumber');
+  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordInput.setAttribute('type', type);
+}
