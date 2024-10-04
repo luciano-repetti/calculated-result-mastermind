@@ -12,12 +12,12 @@
     <form id="gameForm">
   <label for="secretNumber">Número secreto (4 dígitos):</label>
   <div class="input-container">
-    <input type="password" inputmode="numeric" id="secretNumber" maxlength="4" required>
+    <input type="text" id="secretNumber" maxlength="4" inputmode="numeric" required oninput="validateNumberInput(this)" style="-webkit-text-security: disc;">
     <span class="toggle-password" onclick="togglePassword()">👁️</span>
   </div>
 
   <label for="guessNumber">Tu intento (4 dígitos):</label>
-  <input type="number" id="guessNumber" maxlength="4" required>
+  <input type="number" id="guessNumber" min="1000" max="9999" required>
 
   <button type="submit">Comprobar</button>
     </form>
