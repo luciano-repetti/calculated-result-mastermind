@@ -10,13 +10,16 @@
   <div class="container">
     <h1>Juego de Adivinar el Número</h1>
     <form id="gameForm">
-      <label for="secretNumber">Número secreto (4 dígitos):</label>
-      <input type="text" id="secretNumber" maxlength="4" required>
+  <label for="secretNumber">Número secreto (4 dígitos):</label>
+  <div class="input-container">
+    <input type="password" id="secretNumber" maxlength="4" required>
+    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+  </div>
 
-      <label for="guessNumber">Tu intento (4 dígitos):</label>
-      <input type="text" id="guessNumber" maxlength="4" required>
+  <label for="guessNumber">Tu intento (4 dígitos):</label>
+  <input type="text" id="guessNumber" maxlength="4" required>
 
-      <button type="submit">Comprobar</button>
+  <button type="submit">Comprobar</button>
     </form>
 
     <div id="result"></div>
