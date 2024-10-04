@@ -47,6 +47,11 @@ document.getElementById('gameForm').addEventListener('submit', function(e) {
   document.getElementById('result').innerHTML = `Bien: ${bien}, Regular: ${regular}`;
 });
 
+// Función para validar que solo se ingresen números en el input
+function validateNumberInput(input) {
+  input.value = input.value.replace(/[^0-9]/g, ''); // Elimina cualquier carácter que no sea número
+}
+
 // Función para verificar si un número tiene dígitos repetidos
 function hasRepeatingDigits(number) {
   const digits = number.split('');
@@ -56,6 +61,6 @@ function hasRepeatingDigits(number) {
 // Función para mostrar/ocultar el número secreto
 function togglePassword() {
   const passwordInput = document.getElementById('secretNumber');
-  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  passwordInput.setAttribute('type', type);
+  const currentStyle = passwordInput.style.webkitTextSecurity;
+  passwordInput.style.webkitTextSecurity = currentStyle === 'disc' ? 'none' : 'disc';
 }
