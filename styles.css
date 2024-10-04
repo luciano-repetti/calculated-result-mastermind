@@ -1,49 +1,74 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(145deg, #1e1e1e, #292929);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  color: #f0f0f0;
 }
 
 .container {
-  background-color: #fff;
+  background: rgba(50, 50, 50, 0.7);
+  backdrop-filter: blur(10px);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 350px;
   text-align: center;
 }
 
 h1 {
   margin-bottom: 20px;
+  color: #f0f0f0;
 }
 
 input {
-  padding: 10px;
+  padding: 12px;
   width: 100%;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #2e2e2e;
+  color: #fff;
 }
 
 button {
-  padding: 10px;
-  background-color: #4CAF50;
+  padding: 12px;
+  background-color: #008080;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   width: 100%;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #006666;
 }
 
 #result {
   margin-top: 20px;
   font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  input, button {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
 }
