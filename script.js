@@ -9,6 +9,18 @@ document.getElementById('gameForm').addEventListener('submit', function(e) {
     return;
   }
 
+  // Validación de que el número no comience por 0
+  if (secretNumber[0] === '0' || guessNumber[0] === '0') {
+    alert('El número no puede comenzar con 0');
+    return;
+  }
+
+  // Validación de que no se repitan dígitos
+  if (hasRepeatingDigits(secretNumber) || hasRepeatingDigits(guessNumber)) {
+    alert('No se permiten dígitos repetidos');
+    return;
+  }
+
   let bien = 0;
   let regular = 0;
 
@@ -34,3 +46,9 @@ document.getElementById('gameForm').addEventListener('submit', function(e) {
 
   document.getElementById('result').innerHTML = `Bien: ${bien}, Regular: ${regular}`;
 });
+
+// Función para verificar si un número tiene dígitos repetidos
+function hasRepeatingDigits(number) {
+  const digits = number.split('');
+  return new Set(digits).size !== digits.length;
+}
